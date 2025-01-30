@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playwrite+FR+Moderne:wght@100..400&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1d0216da;
+        }
+        .profile-card {
+            display: flex;
+
+        }
+        .profile-card   span img{
+            display: flex; 
+            width: 250px;
+            height: 250px;
+            border-radius: 296.838px 21.077px 87.822px 10.539px;
+            border: 3.513px solid #FFF;
+            background: url("img/image.png") lightgray -1.852px -199.744px / 100% 144.709% no-repeat, url("img/image.png") lightgray -1.852px -199.744px / 100% 144.709% no-repeat;
+            box-shadow: 0.878px 0px 17.125px 0px #FEACEF;
+            object-fit: contain;
+        }
+        .profile-card h2{
+            font-size: 24px;
+            font-weight: bold;
+            font-family: "Playwrite FR Moderne", serif;
+        }
+        .profile-card h2, .profile-card h3, .profile-card p {
+            margin: 10px 0;
+        }
+        .social-links a { 
+            text-decoration: none; 
+            font-weight: bold;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            background:linear-gradient(45deg, rgb(16, 69, 244), rgb(255, 36, 211));
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            color: aliceblue;
+            font-family: "Roboto", serif;
+            align-items: center;
+            width: 75%;
+        }
+        .container .time{
+            width: 100%;
+            display: flex;
+            justify-content: end;
+        }
+        #git,#lik{
+            border: 2px solid#FFF;
+            border-radius: 10px;
+            margin-top: 2rem;
+            color: aliceblue;
+            text-decoration: none;
+            padding: 5px;
+        }
+        #git{
+            color:black;
+            background: #FFF;
+        }
+        #git:hover{
+            background-color: transparent;
+        }
+        #lik:hover{
+            color:black;
+            background: #FFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="time">
+            <img src="https://img.icons8.com/?size=100&id=86125&format=png&color=000000" alt="">
+            <p data-testid="currentTimeUTC" id="utc-time"></p>
+        </div>
+        <div class="profile-card">
+        <div class="main">
+            <h2 data-testid="fullName">Usaamah Ishola Afolabi</h2>
+            <h3 data-testid="jobTitle">Front-End Developer</h3>
+            <p data-testid="shortBio">Passionate front-end developer with experience in React, Next.js. Love crafting responsive, user-friendly interfaces.</p>
+            <p data-testid="currentLocation">Ikorodu, Nigeria</p>
+            <p data-testid="emailAddress">isholausaamah@gmail.com</p> 
+            <div class="social-links" data-testid="socialLinks">
+                <a href="https://github.com/UsaamahAfolabi" id="git" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/UsaamahAfolabi" id="lik" target="_blank">LinkedIn</a>
+          </div> 
+        </div>
+        <span data-testid="profilePicture"> <img src="/img/image.png" alt="" data-testid="profilePicture"></span>
+        </div>
+    </div>
+    
+
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const utcTime = now.toISOString().split("T")[1].split(".")[0] + " UTC";
+            document.getElementById("utc-time").textContent = utcTime;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
