@@ -13,19 +13,23 @@
             align-items: center;
             height: 100vh;
             background-color: #1d0216da;
+            margin: 0;
+            padding: 10px;
         }
         .profile-card {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
         .profile-card span img{
-            display: flex; 
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             border-radius: 296.838px 21.077px 87.822px 10.539px;
             border: 3.513px solid #FFF;
-            background: url("img/image.png") lightgray -1.852px -199.744px / 100% 144.709% no-repeat;
             box-shadow: 0.878px 0px 17.125px 0px #FEACEF;
-            object-fit: contain;
+            object-fit: cover;
         }
         .profile-card h2{
             font-size: 24px;
@@ -51,7 +55,8 @@
             color: aliceblue;
             font-family: "Roboto", serif;
             align-items: center;
-            width: 75%;
+            width: 100%;
+            max-width: 400px;
         }
         .container .time{
             width: 100%;
@@ -65,7 +70,7 @@
             height: 20px;
             filter: invert(1);
         }
-        #git,#lik{
+        #git, #lik{
             border: 2px solid #FFF;
             border-radius: 10px;
             margin-top: 2rem;
@@ -85,6 +90,23 @@
         #lik:hover{
             color: black;
             background: #FFF;
+        }
+        @media (max-width: 480px) {
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-card span img {
+                width: 150px;
+                height: 150px;
+            }
+            .container {
+                padding: 15px;
+                width: 90%;
+            }
+            .time {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -114,10 +136,4 @@
         function updateTime() {
             const now = new Date();
             const utcTime = now.toISOString().split("T")[1].split(".")[0] + " UTC";
-            document.getElementById("utc-time").textContent = utcTime;
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
-    </script>
-</body>
-</html>
+            document.get
