@@ -16,15 +16,14 @@
         }
         .profile-card {
             display: flex;
-
         }
-        .profile-card   span img{
+        .profile-card span img{
             display: flex; 
             width: 250px;
             height: 250px;
             border-radius: 296.838px 21.077px 87.822px 10.539px;
             border: 3.513px solid #FFF;
-            background: url("img/image.png") lightgray -1.852px -199.744px / 100% 144.709% no-repeat, url("img/image.png") lightgray -1.852px -199.744px / 100% 144.709% no-repeat;
+            background: url("img/image.png") lightgray -1.852px -199.744px / 100% 144.709% no-repeat;
             box-shadow: 0.878px 0px 17.125px 0px #FEACEF;
             object-fit: contain;
         }
@@ -39,12 +38,13 @@
         .social-links a { 
             text-decoration: none; 
             font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .container{
             display: flex;
             flex-direction: column;
             gap: 1em;
-            background:linear-gradient(45deg, rgb(16, 69, 244), rgb(255, 36, 211));
+            background: linear-gradient(45deg, rgb(16, 69, 244), rgb(255, 36, 211));
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
@@ -57,24 +57,33 @@
             width: 100%;
             display: flex;
             justify-content: end;
+            align-items: center;
+            gap: 5px;
+        }
+        .time img {
+            width: 20px;
+            height: 20px;
+            filter: invert(1);
         }
         #git,#lik{
-            border: 2px solid#FFF;
+            border: 2px solid #FFF;
             border-radius: 10px;
             margin-top: 2rem;
             color: aliceblue;
             text-decoration: none;
             padding: 5px;
+            transition: all 0.3s ease;
         }
         #git{
-            color:black;
+            color: black;
             background: #FFF;
         }
         #git:hover{
             background-color: transparent;
+            color: white;
         }
         #lik:hover{
-            color:black;
+            color: black;
             background: #FFF;
         }
     </style>
@@ -101,7 +110,6 @@
         </div>
     </div>
     
-
     <script>
         function updateTime() {
             const now = new Date();
