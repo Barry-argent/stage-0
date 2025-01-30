@@ -17,11 +17,11 @@
             padding: 10px;
         }
         .profile-card {
-            display: flex;
-            flex-wrap: wrap;
+            display: flex; 
             justify-content: center;
             align-items: center;
-            text-align: center;
+            text-align: start;
+            margin-bottom: 2rem;
         }
         .profile-card span img{
             width: 200px;
@@ -55,8 +55,7 @@
             color: aliceblue;
             font-family: "Roboto", serif;
             align-items: center;
-            width: 100%;
-            max-width: 400px;
+            width: 75%; 
         }
         .container .time{
             width: 100%;
@@ -97,11 +96,8 @@
                 text-align: center;
             }
             .profile-card span img {
-             display:none;
-            }
-            .container {
-                padding: 15px; 
-            }
+                 display:none;
+            } 
             .time {
                 justify-content: center;
             }
@@ -134,4 +130,10 @@
         function updateTime() {
             const now = new Date();
             const utcTime = now.toISOString().split("T")[1].split(".")[0] + " UTC";
-            document.get
+            document.getElementById("utc-time").textContent = utcTime;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
